@@ -1,1 +1,1 @@
-let me cook fr
+Uses https://random-word-api.herokuapp.com/home api to generate words
