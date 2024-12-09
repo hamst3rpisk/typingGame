@@ -89,10 +89,13 @@ body {
 #main {
     color: rgb(239, 31, 69);
     font-family: "Funnel Display", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
     animation-name: changeCol;
     animation-duration: 2s;
     text-align: center;
-    font-size: 10em;
+    font-size: 8em;
     /* text-decoration: line-through; */
     width: 100%;
     font-weight: 500;
@@ -263,6 +266,34 @@ p {
     margin-left:10%;
     border-radius: 5px;
     opacity:0%;
+}
+#scorediv {
+    display: grid;
+    width:80%;
+    height:30%;
+    background-color: black;
+    margin-left:10%;
+    border-radius: 5px;
+    opacity:0%;
+
+}
+#score {
+    font-family: "Funnel Display", monospace;
+    color:white;
+}
+#time {
+    font-family: "Funnel Display", monospace;
+    color:white;
+}
+#wpm {
+    font-family: "Funnel Display", monospace;
+    color:white;
+}
+input[type="range"] {
+    width:80px;
+    cursor:grab;
+    color:white;
+    background-color: white;
 }
 #textDisplayed, #writeField {
     grid-column: 1;
