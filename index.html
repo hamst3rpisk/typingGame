@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -20,10 +21,17 @@
     <div class="container">
         <div class="centerx">
             <button id="playbutton">Play</button>
+            <input type="range" id="letterSlider" min="0" max="10">Letters Per Word</input>
+            <input type="range" id="wordSlider" min="1" max="10">Number of Words</input>
         </div>
     </div>
+    <div id="scorediv" class="hidden">
+        <p id="score">Score: 0</p>
+        <p id="time">Time: </p>
+        <p id="wpm">0wpm</p>
+    </div>
     <div id="maingamediv" class="hidden">
-
+        
         <p contenteditable="true" id="writeField"></p>
         <p id="textDisplayed"></p>
     </div>
