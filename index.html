@@ -19,23 +19,25 @@
     
     <p id="main">Typing Speed Test</p>
     <div class="container">
-        <div class="centerx">
+        <div class="centerx" id="settingDiv">
             <button id="playbutton">Play</button>
-            <input type="range" id="letterSlider" min="0" max="10">Letters Per Word</input>
-            <input type="range" id="wordSlider" min="1" max="10">Number of Words</input>
+            <p class="sliderText">Letters Per Word</p>
+            <input type="range" id="letterSlider" min="0" max="10" class="optionSlider"></input>
+            <p class="sliderText">Number of Words</p>
+            <input type="range" id="wordSlider" min="1" max="10" class="optionSlider"></input>
+        </div>
+    
+        <div id="scorediv" class="hidden">
+            <p id="score">Score: 0</p>
+            <p id="time">Time: </p>
+            <p id="wpm">0wpm</p>
+        </div>
+        <div id="maingamediv" class="hidden">
+            
+            <p contenteditable="true" spellcheck="false" id="writeField"></p>
+            <p id="textDisplayed"></p>
         </div>
     </div>
-    <div id="scorediv" class="hidden">
-        <p id="score">Score: 0</p>
-        <p id="time">Time: </p>
-        <p id="wpm">0wpm</p>
-    </div>
-    <div id="maingamediv" class="hidden">
-        
-        <p contenteditable="true" id="writeField"></p>
-        <p id="textDisplayed"></p>
-    </div>
-    
     
 
     <script src="script.js"></script>
