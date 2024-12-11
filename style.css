@@ -300,8 +300,15 @@ p {
     font-family: "Funnel Display", monospace;
     position: relative;
     margin:auto;
-    display: block;
-    
+    display: block;   
+}
+.sliderValueText {
+    color:white;
+    font-family: "Funnel Display", monospace;
+    position: relative;
+    margin-top:0;
+    margin-bottom:20px;
+    display: block; 
 }
 #playbutton {
     font-weight: bold;
@@ -345,7 +352,6 @@ p {
     transition: opacity .2s;
     position: relative;
     margin:auto;
-    margin-bottom: 20px;
     display: block;
 }
 .optionSlider:hover {
@@ -381,7 +387,9 @@ p {
     text-shadow: 0 0 3px #FFFF;
     accent-color: white;
     caret-color: white;
-    
+    word-wrap: break-word;
+    white-space: pre-line;
+    text-wrap:wrap;
     
 }
 #textDisplayed {

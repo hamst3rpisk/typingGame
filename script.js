@@ -14,8 +14,10 @@ const letterSlider = document.querySelector("#letterSlider");
 const wordSlider = document.querySelector("#wordSlider");
 const mainDiv = document.querySelector("#mainDiv");
 const settingDiv = document.querySelector("#settingDiv");
+const selectedWords = document.querySelector("#selectedWords");
+const selectedLetters = document.querySelector("#selectedLetters");
 let score = 0;
-
+let wordsWritten = 0;
 /*EVENT LISTENERS*/
 playbutton.addEventListener("click",startgame);
 writeField.addEventListener("input",checkText);
@@ -35,10 +37,18 @@ async function apiRandomWords(url) {
     textDisplayed.innerHTML = text2Display;
 }
 
+wordSlider.addEventListener("change", e => {
+    selectedWords.innerHTML = wordSlider.value;
+});
+letterSlider.addEventListener("change", e => {
+    if (letterSlider.value == 1) selectedLetters.innerHTML = "Random";
+    else selectedLetters.innerHTML = letterSlider.value;
+});
+
 let url = "";
 function startgame() {
     numOfWords = wordSlider.value;
-    if (letterSlider.value != 0 ) {
+    if (letterSlider.value != 1) {
         letterString = "&length=" + letterSlider.value;
     }
     url = "https://random-word-api.herokuapp.com/word?number="+numOfWords+letterString;
@@ -82,21 +92,33 @@ function startTime() {
     setInterval(() => {
         let secondsPassed = (Date.now() - dateStart)/1000;
         timep.innerHTML = Math.floor(secondsPassed/3600) + "h:" + Math.floor(secondsPassed/60)%60 + "m:" + Math.floor(secondsPassed%60)+"s";
-        wpmp.innerHTML = Math.round(score*numOfWords / (secondsPassed/60)) + "wpm";
+        wpmp.innerHTML = Math.round(wordsWritten / (secondsPassed/60)) + "wpm";
     },10);
 }
+
+  
 function checkText() {
     let writeText = writeField.textContent;
     let displayedText = textDisplayed.innerHTML;
     
     let writeTextLength = writeText.length;
-    if(writeText.substring(writeText.length -1) == " ") console.log("its empty");
+    let writtenWords = writeText.split(" ");
+    let toWriteWords = displayedText.split(" ");
+    console.log(writtenWords);
+    console.log(toWriteWords);
+    if (writtenWords[0] == toWriteWords[0]) {
+        wordsWritten++;
+        
+        writtenWords.shift();
+        toWriteWords.shift();
+        textDisplayed.innerHTML = toWriteWords.join(" ");
+        writeField.textContent = "";
+    }
     if (writeText.substring(0,writeTextLength).trim() != displayedText.substring(0,writeTextLength).trim() && writeText != displayedText) {
         //writeField.style.color="rgb(239, 31, 69)"
         writeField.style.textShadow="0 0 10px red";
     }
-    else if (writeText.trim() == displayedText.trim()) {
-        writeField.style.color="green";
+    else if (writeText.trim() == displayedText.trim() && writeText.length != 0) {
         writeField.style.textShadow="0 0 3px #FFFF";
         score++;
         scorep.innerHTML = "Score: " + score;
