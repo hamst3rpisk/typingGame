@@ -24,7 +24,7 @@ writeField.addEventListener("input",checkText);
 
 /*FUNCTIONS*/
 
-let numOfWords = 4;
+let numOfWords = 1;
 let text2Display = "";
 let letterString = "";
 async function apiRandomWords(url) {
@@ -108,7 +108,7 @@ function checkText() {
     console.log(toWriteWords);
     if (writtenWords[0] == toWriteWords[0]) {
         wordsWritten++;
-        
+
         writtenWords.shift();
         toWriteWords.shift();
         textDisplayed.innerHTML = toWriteWords.join(" ");
@@ -120,7 +120,8 @@ function checkText() {
     }
     else if (writeText.trim() == displayedText.trim() && writeText.length != 0) {
         writeField.style.textShadow="0 0 3px #FFFF";
-        score++;
+        if (letterSlider.value == 1) score += parseInt(wordSlider.value) * Math.floor(Math.random() * (10) + 1);
+        else score += parseInt(wordSlider.value) * parseInt(letterSlider.value);
         scorep.innerHTML = "Score: " + score;
         writeField.innerHTML = "";
         apiRandomWords(url);
