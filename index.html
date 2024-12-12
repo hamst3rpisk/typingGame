@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Typing Speed Test</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -31,14 +31,21 @@
         </div>
     
         <div id="scorediv" class="hidden">
-            <p id="score">Score: 0</p>
-            <p id="time">Time: </p>
-            <p id="wpm">0wpm</p>
+            <p id="score" class="scoredivtext">Score: 0</p>
+            <p id="time" class="scoredivtext">Time: </p>
+            <p id="wpm" class="scoredivtext">0wpm</p>
         </div>
         <div id="maingamediv" class="hidden">
-            
             <p contenteditable="true" spellcheck="false" id="writeField"></p>
             <p id="textDisplayed"></p>
+        </div>
+        <p id="endgame" class="scoredivtext" class="hidden"> Click Esc to end game</p>
+        <div id="endgamediv" class="hidden">
+            <p class="endgametext">Your game has come to an end!</p>
+            <p class="endgametextstats" id="endgamescoretext">Score: </p>
+            <p class="endgametextstats" id="endgamewpmtext">Words per Minute: </p>
+            <p class="endgametextstats" id="endgamewordstext">Words written: </p>
+            <button id="backtomainbutton">Back to main menu</button>
         </div>
     </div>
     

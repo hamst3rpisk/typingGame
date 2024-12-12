@@ -276,7 +276,6 @@ p {
     opacity:0%;
     position: absolute;
     top:35vh;
-    
 }
 #scorediv {
     display: grid;
@@ -288,8 +287,48 @@ p {
     opacity:0%;
     position: absolute;
     top:5vh;
-
 }
+#endgamediv {
+    display: grid;
+    width:80%;
+    height:30%;
+    background-color: black;
+    margin-left:10%;
+    border-radius: 5px;
+    opacity:0%;
+    position: absolute;
+    top:35vh;
+    text-align: center;
+}
+.endgametext {
+    color:white;
+    font-family: "Funnel Display", monospace;
+    position: relative;
+    margin-bottom:5px;
+    display: block; 
+    text-shadow: 0 0 4px beige;
+    font-size: 1.25em;
+}
+.endgametextstats {
+    color:white;
+    font-family: "Funnel Display", monospace;
+    position: relative;
+    display: block; 
+}
+#backtomainbutton {
+    background-color: black;
+    border-color: white;
+    border-radius: 2px;
+    color:white;
+    width:10vw;
+    left:35vw;
+    margin-top:20px;
+    font-family: "Funnel Display", monospace;
+    position: relative;
+    display: block;
+    text-shadow: 0 0 4px beige;
+}
+
 #settingDiv {
     position: absolute;
     z-index: 100;
@@ -327,17 +366,20 @@ p {
     margin-bottom: 3vh;
 }
 
-#score {
+.scoredivtext {
     font-family: "Funnel Display", monospace;
     color:white;
 }
-#time {
-    font-family: "Funnel Display", monospace;
-    color:white;
-}
-#wpm {
-    font-family: "Funnel Display", monospace;
-    color:white;
+#endgame {
+    display: grid;
+    width:80%;
+    height:30%;
+    background-color: black;
+    margin-left:10%;
+    border-radius: 5px;
+    opacity:0%;
+    position: absolute;
+    top:70vh;
 }
 .optionSlider {
     -webkit-appearance: none;
